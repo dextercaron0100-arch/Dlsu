@@ -44,7 +44,10 @@ form.addEventListener('submit', (event) => {
     return;
   }
   message.style.color = '#08783e';
-  message.textContent = 'Login form validated. Authentication will be connected next.';
+  message.textContent = 'Login successful. Opening your dashboard…';
+  window.setTimeout(() => {
+    window.location.href = 'dashboard.html';
+  }, 450);
 });
 
 createCaptcha();
