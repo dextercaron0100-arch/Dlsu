@@ -6,22 +6,45 @@ const profilePopover = document.querySelector('#profilePopover');
 const profileToggle = document.querySelector('#profileToggle');
 const profileSubmenu = document.querySelector('#profileSubmenu');
 
+const isMobile = () => window.matchMedia('(max-width: 900px)').matches;
+const setBodyLock = (locked) => document.body.classList.toggle('nav-open', locked && isMobile());
+
 const closeSidebar = () => {
-  sidebar.classList.remove('open');
-  scrim.classList.remove('open');
-  menuButton.setAttribute('aria-expanded', 'false');
+  sidebar?.classList.remove('open');
+  scrim?.classList.remove('open');
+  menuButton?.setAttribute('aria-expanded', 'false');
+  setBodyLock(false);
 };
 
-menuButton.addEventListener('click', () => {
+menuButton?.addEventListener('click', () => {
   const isOpen = sidebar.classList.toggle('open');
-  scrim.classList.toggle('open', isOpen);
+  scrim?.classList.toggle('open', isOpen);
   menuButton.setAttribute('aria-expanded', String(isOpen));
+  setBodyLock(isOpen);
 });
-scrim.addEventListener('click', closeSidebar);
+scrim?.addEventListener('click', closeSidebar);
 
-studentMenu.addEventListener('click', () => {
+const closeProfile = () => {
+  profilePopover?.classList.remove('open');
+  studentMenu?.setAttribute('aria-expanded', 'false');
+};
+
+studentMenu?.addEventListener('click', (event) => {
+  event.stopPropagation();
   const isOpen = profilePopover.classList.toggle('open');
   studentMenu.setAttribute('aria-expanded', String(isOpen));
+});
+profilePopover?.addEventListener('click', (event) => event.stopPropagation());
+document.addEventListener('click', closeProfile);
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    closeSidebar();
+    closeProfile();
+    menuButton?.focus();
+  }
+});
+window.addEventListener('resize', () => {
+  if (!isMobile()) closeSidebar();
 });
 
 if (profileToggle && profileSubmenu) {
@@ -38,12 +61,15 @@ document.querySelectorAll('#sideNav a').forEach((link) => link.addEventListener(
   closeSidebar();
 }));
 
-document.querySelector('#menuSearch').addEventListener('input', (event) => {
+document.querySelector('#menuSearch')?.addEventListener('input', (event) => {
   const query = event.target.value.trim().toLowerCase();
   document.querySelectorAll('#sideNav a').forEach((link) => {
     link.hidden = !link.textContent.toLowerCase().includes(query);
   });
-  if (query && profileSubmenu) profileSubmenu.classList.add('open');
+  if (query && profileSubmenu) {
+    profileSubmenu.classList.add('open');
+    profileToggle?.setAttribute('aria-expanded', 'true');
+  }
 });
 
 document.querySelectorAll('.tab').forEach((tab) => tab.addEventListener('click', () => {
