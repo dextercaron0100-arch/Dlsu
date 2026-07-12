@@ -6,6 +6,7 @@ const form = document.querySelector('#loginForm');
 const message = document.querySelector('#formMessage');
 
 const createCaptcha = () => {
+  if (!codeElement) return;
   const alphabet = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
   let code = '';
   for (let index = 0; index < 6; index += 1) {
@@ -15,20 +16,21 @@ const createCaptcha = () => {
   codeElement.dataset.code = code;
 };
 
-refreshButton.addEventListener('click', () => {
+refreshButton?.addEventListener('click', () => {
   createCaptcha();
-  document.querySelector('#captchaInput').value = '';
-  message.textContent = '';
+  const captchaInput = document.querySelector('#captchaInput');
+  if (captchaInput) captchaInput.value = '';
+  if (message) message.textContent = '';
 });
 
-togglePassword.addEventListener('click', () => {
+togglePassword?.addEventListener('click', () => {
   const isHidden = passwordInput.type === 'password';
   passwordInput.type = isHidden ? 'text' : 'password';
   togglePassword.textContent = isHidden ? 'Hide' : 'Show';
   togglePassword.setAttribute('aria-label', isHidden ? 'Hide password' : 'Show password');
 });
 
-form.addEventListener('submit', (event) => {
+form?.addEventListener('submit', (event) => {
   event.preventDefault();
   const username = document.querySelector('#username').value.trim();
   const password = passwordInput.value;
