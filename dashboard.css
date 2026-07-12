@@ -14,3 +14,17 @@
 .unavailable-card p{margin:14px 0 26px;color:#6a776f}
 .back-dashboard{display:inline-flex;padding:12px 18px;border-radius:8px;background:#e9f4ed;color:#08783e;font-size:13px;font-weight:700;text-decoration:none}
 @media(max-width:570px){.enlistment-page{padding-top:30px}.warning-icon{width:88px;height:88px}.unavailable-card{padding:38px 18px}}
+
+.payments-page{display:flex;flex-direction:column;gap:22px}
+.payment-summary{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.summary-card{--accent:#08783e;display:flex;align-items:center;gap:16px;min-height:120px;padding:20px;border-top:4px solid var(--accent);border-radius:9px;background:#fff;box-shadow:0 7px 25px rgba(20,45,32,.05)}
+.summary-card .wallet{width:58px;height:62px;display:grid;place-items:center;flex:none;border-radius:7px;background:var(--accent);color:#fff;font-size:34px}
+.summary-card div:last-child{min-width:0}.summary-card strong{display:block;font-size:clamp(17px,1.5vw,24px);white-space:nowrap}.summary-card span{display:block;margin-top:9px;color:#707a75;font-size:13px;white-space:nowrap}
+.summary-card.paid{--accent:#72a036}.summary-card.scholarship{--accent:#12a7d8}.summary-card.balance{--accent:#ff9209}.summary-card.excess{--accent:#f65353}
+.payment-section{overflow:hidden;border-top:4px solid #08783e;border-radius:9px;background:#fff;box-shadow:0 7px 25px rgba(20,45,32,.05)}
+.payment-section header{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:1px solid #e3e8e5}
+.payment-section h1,.payment-section h2{margin:0;color:#08783e;font-size:22px;font-weight:500}.payment-section h1 span,.payment-section h2 span{margin-right:14px}
+.outline-button,.collapse-button{height:42px;padding:0 16px;border:1px solid #08783e;border-radius:7px;background:#fff;color:#08783e;font-size:16px;cursor:pointer}
+.payment-view-tabs{display:flex;gap:12px;padding:20px}.payment-view-tab{padding:12px 22px;border:1px solid #d9e1dc;border-radius:7px;background:#fff;color:#4a5750;cursor:pointer}.payment-view-tab.active{border-color:#08783e;background:#08783e;color:#fff}
+.table-section{min-height:220px}.table-scroll{overflow-x:auto;padding:28px 20px}.table-scroll table{width:100%;border-collapse:collapse;min-width:650px}.table-scroll th,.table-scroll td{padding:14px;border:1px solid #d9dee1;text-align:left}.table-scroll th{background:#f1f2f9;color:#1d2923}.table-scroll td{text-align:center;color:#7b867f}
+@media(max-width:1250px){.payment-summary{grid-template-columns:repeat(3,1fr)}}@media(max-width:760px){.payment-summary{grid-template-columns:1fr 1fr}.summary-card{min-height:105px}.summary-card span{white-space:normal}.payment-section header{height:64px}.payment-section h1,.payment-section h2{font-size:18px}}@media(max-width:480px){.payment-summary{grid-template-columns:1fr}.summary-card{min-height:90px}.outline-button{font-size:13px;padding:0 10px}}
