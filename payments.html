@@ -13,14 +13,14 @@
 <body>
   <header class="topbar">
     <div class="top-brand">
-      <button class="menu-button" id="menuButton" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <button class="menu-button" id="menuButton" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar">☰</button>
       <img src="data:image/png;base64,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" alt="DLSU seal" /><span>DLSU</span>
     </div>
     <div class="top-actions">
       <button class="top-icon" aria-label="Notifications"><span>♧</span><b>0</b></button>
       <button class="top-icon calendar" aria-label="Calendar">▣</button>
-      <button class="student-menu" id="studentMenu" aria-expanded="false"><span><strong>STUDENT USER</strong><small>Student Portal</small></span><i>⌄</i></button>
-      <div class="profile-popover" id="profilePopover"><a href="dashboard.html#profile">View profile</a><a href="index.html">Sign out</a></div>
+      <button class="student-menu" id="studentMenu" aria-expanded="false" aria-controls="profilePopover" aria-haspopup="menu"><span><strong>STUDENT USER</strong><small>Student Portal</small></span><i>⌄</i></button>
+      <div class="profile-popover" id="profilePopover" role="menu"><a role="menuitem" href="dashboard.html#profile">View profile</a><a role="menuitem" href="index.html">Sign out</a></div>
     </div>
   </header>
   <div class="page-layout">
@@ -31,7 +31,7 @@
         <a href="dashboard.html"><span>⌘</span>Student Dashboard</a>
         <a href="enlistment.html"><span>▤</span>Enlistment</a>
         <a class="active" href="payments.html"><span>▭</span>My Payments</a>
-        <button class="nav-parent" id="profileToggle" type="button" aria-expanded="false"><span>♟</span>Profile <i>⌄</i></button>
+        <button class="nav-parent" id="profileToggle" type="button" aria-expanded="false" aria-controls="profileSubmenu"><span>♟</span>Profile <i>⌄</i></button>
         <div class="nav-submenu" id="profileSubmenu">
           <a href="dashboard.html#registered-courses">Registered Courses</a>
           <a href="dashboard.html#class-schedule">Class Schedule</a>
