@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#08783e" />
+    <title>DLSU Portal | Sign In</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="brand-panel" aria-label="De La Salle University welcome panel">
+        <div class="brand-content">
+          <div class="seal" aria-hidden="true">DLSU</div>
+          <p class="eyebrow">De La Salle University</p>
+          <h1>Your campus,<br />one portal.</h1>
+          <p class="brand-copy">Access your classes, records, announcements, and university services securely.</p>
+        </div>
+        <p class="motto">Religio · Mores · Cultura</p>
+      </section>
+
+      <section class="login-panel">
+        <div class="login-card">
+          <div class="mobile-brand" aria-hidden="true">
+            <span class="mini-seal">DLSU</span>
+            <span>De La Salle University</span>
+          </div>
+          <header>
+            <p class="eyebrow green">Welcome back</p>
+            <h2>Let’s get started</h2>
+            <p>Sign in to your student portal</p>
+          </header>
+
+          <form id="loginForm" novalidate>
+            <label for="username">Username or email</label>
+            <div class="input-wrap">
+              <span class="input-icon" aria-hidden="true">@</span>
+              <input id="username" name="username" type="text" autocomplete="username" placeholder="Enter your username" required />
+            </div>
+
+            <div class="label-row">
+              <label for="password">Password</label>
+              <a href="#" id="forgotLink">Forgot password?</a>
+            </div>
+            <div class="input-wrap">
+              <span class="input-icon lock" aria-hidden="true">●</span>
+              <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required />
+              <button class="icon-button" id="togglePassword" type="button" aria-label="Show password">Show</button>
+            </div>
+
+            <div class="captcha-heading">
+              <label for="captchaInput">Security check</label>
+              <button type="button" id="refreshCaptcha" class="refresh-button" aria-label="Generate a new security code">↻ New code</button>
+            </div>
+            <div class="captcha-row">
+              <div class="captcha-code" id="captchaCode" aria-label="Security code"></div>
+              <input id="captchaInput" name="captcha" type="text" inputmode="text" maxlength="6" placeholder="Enter code" required />
+            </div>
+
+            <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+            <button class="primary-button" type="submit">Sign in</button>
+
+            <div class="divider"><span>or continue with</span></div>
+            <button class="google-button" type="button">
+              <span class="google-g" aria-hidden="true">G</span>
+              Google
+            </button>
+          </form>
+
+          <p class="help-text">Need help? <a href="#">Contact IT Services</a></p>
+        </div>
+        <footer>© 2026 De La Salle University. All rights reserved.</footer>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
