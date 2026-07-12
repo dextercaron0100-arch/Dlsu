@@ -84,3 +84,23 @@ footer { width: 100%; margin-top: 50px; color: #8b958f; text-align: center; font
   .login-card { animation: enter .55s ease-out both; }
   @keyframes enter { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 }
+
+/* Cohesive portal polish */
+:root { --radius-sm: 10px; --radius: 14px; --shadow: 0 10px 30px rgba(16, 55, 35, .08); }
+a, button, input { border-radius: var(--radius-sm); }
+:where(a, button, input):focus-visible { outline: 3px solid rgba(8,120,62,.28); outline-offset: 3px; }
+.login-card { padding: 36px; border: 1px solid rgba(220,228,223,.85); border-radius: 18px; background: rgba(255,255,255,.82); box-shadow: var(--shadow); backdrop-filter: blur(8px); }
+.brand-panel h1 { font-size: clamp(46px,5vw,68px); }
+@media (max-width:800px) { .login-card { padding: 0; border: 0; background: transparent; box-shadow: none; backdrop-filter: none; } }
+@media (max-height:760px) and (min-width:801px) {
+  .brand-panel { padding: 34px clamp(42px,6vw,76px); }
+  .seal { width: 82px; height: 82px; margin-bottom: 20px; }
+  .brand-copy { margin-top: 18px; line-height:1.5; }
+  .login-panel { padding-block: 20px; }
+  .login-card { padding: 24px 32px; }
+  header { margin-bottom: 22px; }
+  .input-wrap { margin-bottom: 14px; }
+  .divider { margin: 15px 0; }
+  .help-text { margin-top: 15px; }
+  footer { margin-top: 20px; }
+}
