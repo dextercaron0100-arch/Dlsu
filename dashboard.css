@@ -28,3 +28,13 @@
 .payment-view-tabs{display:flex;gap:12px;padding:20px}.payment-view-tab{padding:12px 22px;border:1px solid #d9e1dc;border-radius:7px;background:#fff;color:#4a5750;cursor:pointer}.payment-view-tab.active{border-color:#08783e;background:#08783e;color:#fff}
 .table-section{min-height:220px}.table-scroll{overflow-x:auto;padding:28px 20px}.table-scroll table{width:100%;border-collapse:collapse;min-width:650px}.table-scroll th,.table-scroll td{padding:14px;border:1px solid #d9dee1;text-align:left}.table-scroll th{background:#f1f2f9;color:#1d2923}.table-scroll td{text-align:center;color:#7b867f}
 @media(max-width:1250px){.payment-summary{grid-template-columns:repeat(3,1fr)}}@media(max-width:760px){.payment-summary{grid-template-columns:1fr 1fr}.summary-card{min-height:105px}.summary-card span{white-space:normal}.payment-section header{height:64px}.payment-section h1,.payment-section h2{font-size:18px}}@media(max-width:480px){.payment-summary{grid-template-columns:1fr}.summary-card{min-height:90px}.outline-button{font-size:13px;padding:0 10px}}
+
+#sideNav .nav-parent{width:100%;height:58px;display:grid;grid-template-columns:28px 1fr auto;align-items:center;padding:0 20px;border:0;background:#fff;color:#35443c;text-align:left;font:inherit;cursor:pointer}
+#sideNav .nav-parent:hover,#sideNav .nav-parent.active{background:#e9edf2;color:#08783e}
+#sideNav .nav-parent i{font-style:normal;transition:transform .2s}
+#sideNav .nav-parent.active i{transform:rotate(180deg)}
+.nav-submenu{display:none;margin:0;background:#f3f5f8;padding:4px 0 8px 56px}
+.nav-submenu.open{display:block}
+#sideNav .nav-submenu a{position:relative;height:54px;padding:0 16px;border-left:1px solid #d8ddd9;background:transparent;color:#43534a;font-size:14px}
+#sideNav .nav-submenu a::before{content:"";position:absolute;left:-1px;top:0;width:20px;height:50%;border-left:1px solid #d8ddd9;border-bottom:1px solid #d8ddd9;border-bottom-left-radius:10px;transform:translateX(-1px)}
+#sideNav .nav-submenu a:hover{color:#08783e;background:#edf2ef}
