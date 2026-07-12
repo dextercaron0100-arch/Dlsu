@@ -35,7 +35,13 @@
         <a class="active" href="#dashboard"><span>⌘</span>Student Dashboard</a>
         <a href="enlistment.html"><span>▤</span>Enlistment</a>
         <a href="payments.html"><span>▭</span>My Payments</a>
-        <a href="#profile"><span>♟</span>Profile <i>›</i></a>
+        <button class="nav-parent" id="profileToggle" type="button" aria-expanded="false"><span>♟</span>Profile <i>⌄</i></button>
+        <div class="nav-submenu" id="profileSubmenu">
+          <a href="#registered-courses">Registered Courses</a>
+          <a href="#class-schedule">Class Schedule</a>
+          <a href="#profile-details">Profile Details</a>
+          <a href="#curriculum-progression">Curriculum Progression</a>
+        </div>
         <a href="#services"><span>◉</span>Services <i>›</i></a>
       </nav>
       <div class="last-login"><span>Last Login : <strong id="lastLogin">12 Jul 2026 03:59 PM</strong></span><a href="index.html" aria-label="Sign out">⏻</a></div>
