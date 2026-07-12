@@ -3,6 +3,8 @@ const sidebar = document.querySelector('#sidebar');
 const scrim = document.querySelector('#scrim');
 const studentMenu = document.querySelector('#studentMenu');
 const profilePopover = document.querySelector('#profilePopover');
+const profileToggle = document.querySelector('#profileToggle');
+const profileSubmenu = document.querySelector('#profileSubmenu');
 
 const closeSidebar = () => {
   sidebar.classList.remove('open');
@@ -22,6 +24,14 @@ studentMenu.addEventListener('click', () => {
   studentMenu.setAttribute('aria-expanded', String(isOpen));
 });
 
+if (profileToggle && profileSubmenu) {
+  profileToggle.addEventListener('click', () => {
+    const isOpen = profileSubmenu.classList.toggle('open');
+    profileToggle.classList.toggle('active', isOpen);
+    profileToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+}
+
 document.querySelectorAll('#sideNav a').forEach((link) => link.addEventListener('click', () => {
   document.querySelectorAll('#sideNav a').forEach((item) => item.classList.remove('active'));
   link.classList.add('active');
@@ -33,6 +43,7 @@ document.querySelector('#menuSearch').addEventListener('input', (event) => {
   document.querySelectorAll('#sideNav a').forEach((link) => {
     link.hidden = !link.textContent.toLowerCase().includes(query);
   });
+  if (query && profileSubmenu) profileSubmenu.classList.add('open');
 });
 
 document.querySelectorAll('.tab').forEach((tab) => tab.addEventListener('click', () => {
